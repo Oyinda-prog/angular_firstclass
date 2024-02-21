@@ -1,0 +1,10 @@
+<div>
+    <div class="shadow" *ngFor="let list of  behavior_array" (click)="sendlist(list)" style="cursor: pointer;">
+   <div class="my-4 p-5">
+    <p>{{list.firstname}}</p>
+    <p>{{list.lastname}}</p>
+    <p>{{list.age}}</p>
+    <p>{{list.email}}</p>
+   </div>
+    </div>
+</div>

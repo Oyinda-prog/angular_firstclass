@@ -1,0 +1,36 @@
+<p>templatedrivenform works!</p>
+<div class="container">
+    <div class="col-6 mx-auto">
+        <div class="p-3">
+            <h1 class="text-center text-primary">Template Driven Form</h1>
+          <form #fgroup="ngForm">
+            <input type="text" placeholder="Firstname" [(ngModel)]="firstname" class="form-control my-2" name="firstname" #fname="ngModel" required [class.is-valid]="fname.valid && fname.touched" [class.is-invalid]="fname.invalid && fname.dirty" minlength="5">
+            <!-- {{fname.valid}} -->
+        <!-- {{dirty,touched,untouched,pristine}} -->
+        <div *ngIf="fname.invalid && fname.touched">
+         <span class="text-center text-danger" *ngIf="fname?.errors?.['required']">This field is required</span>
+         <span  class="text-center text-danger" *ngIf="fname?.errors?.['minlength']">The minimum length required is 5</span>
+        </div>
+            <input type="text" placeholder="city" [(ngModel)]="city" class="form-control my-2" name="city">
+            <input type="checkbox" [(ngModel)]="boxs" name="box" > 
+         
+            <button class="btn btn-primary w-100"  [disabled]="fgroup.invalid ||boxs==false">Submbit</button>
+          </form>
+
+        </div>
+
+    </div>
+    <div class="col-6 mx-auto">
+        <div class="p-3">
+            <form [formGroup]="formone">
+                <input type="text" class="form-control my-2" formControlName="firstname" [class.is-valid]="formone.get('firstname')?.valid" >
+                <div></div>
+                <input type="text" class="form-control my-2" formControlName="lastname">
+              <button class="btn btn-success" (click)="submit_two()">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,13 @@
+<p>eventchild works!</p>
+<div class="container">
+    <div class="mx-auto col-5 shadow p-5">
+        <h1 class="text-primary">This is the child component</h1>
+        <p>{{receivetext}}</p>
+
+    </div>
+    <div class="shadow mx-auto col-5 p-5">
+<input type="text" [(ngModel)]="sendresponse" class="form-control my-2">
+<button class="btn btn-primary my-3 w-100" (click)="send()">Send</button>
+    </div>
+
+</div>

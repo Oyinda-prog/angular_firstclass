@@ -1,0 +1,51 @@
+<div class="container">
+  <nav class="nav">
+    <a routerLink="/dashboard/deposit" class="nav nav-link">Home|</a>
+    <a routerLink="/dashboard" class="nav nav-link">Dashboard|</a>
+    <a routerLink="/signup" class="nav nav-link">Signup|</a>
+    <a routerLink="/signin" class="nav nav-link">Signin|</a>
+    <a routerLink="/templateform" class="nav nav-link">Template Driven Form|</a>
+    <a routerLink="/reactiveform" class="nav nav-link">Reactive Form|</a>
+    <a routerLink="/behavior" class="nav nav-link">Behavior</a>
+
+  </nav>
+    
+    <div class="row">
+        <div class="col-6 shadow">
+          <div class="text-center">
+            <h6 class="text-info">Add up</h6>
+
+          </div>
+            <div class="col-10 mx-auto">
+                <input type="text" class="{{styles}}" [(ngModel)]="first_name" placeholder="First Name" >
+                <input type="text" class="{{styles}}" [(ngModel)]="last_name" placeholder="Last Name" >
+                <input type="text" class="{{styles}}" [(ngModel)]="email" placeholder="Email" >
+                <input type="text" class="{{styles}}" [(ngModel)]="phone_number" placeholder="Phonenumber" >
+                <input type="text" class="{{styles}}" [(ngModel)]="address" placeholder="Address">
+                <input type="text" class="{{styles}}" [(ngModel)]="gender"placeholder="Gender">
+                <button class="btn btn-success w-100 my-3" (click)="addContact()">Add</button>
+            </div>
+        </div>
+        <div class="col-6 shadow">
+            <div class="row my-2" *ngFor="let contact of contactarray, let i=index">
+                <div class="col-3 my-2">
+             <div>{{contact.firstname}}</div>
+                </div>
+                <div class="col-3 " >
+                    <button class="btn btn-info" routerLink="/dashboard/{{i}}">View</button>
+                </div>
+                <div class="col-2" class="btn btn-danger w-25" (click)="del(i)">Delete</div>
+                <div class="col-2" class="btn btn-success w-25">Edit</div>
+ 
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div >
+
+</div>
+
+  <a href="">Home|</a>
